@@ -1,5 +1,8 @@
 import styled, { css } from 'styled-components';
 
+type HeaderProps = {
+  available: boolean;
+};
 export const Container = styled.div`
   background: #f0f0f5;
   border-radius: 8px;
@@ -12,9 +15,9 @@ export const Container = styled.div`
     transition: 0.3s opacity;
     text-align: center;
 
-    ${props =>
-    !props.available &&
-    css`
+    ${(props: HeaderProps) =>
+      !props.available &&
+      css`
         opacity: 0.3;
       `};
 
